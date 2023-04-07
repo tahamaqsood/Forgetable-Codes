@@ -13,16 +13,16 @@ $mail = new PHPMailer(true);
 try {
     // Server settings
     $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = 'madalphadesigners.com';                 // SMTP server
+    $mail->Host       = 'domain.com';                 // SMTP server
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'info@madalphadesigners.com';        // SMTP username
-    $mail->Password   = 'vd5yaRg4Irp7';                                 // SMTP password
+    $mail->Username   = 'mailsenderEmail';        // SMTP username
+    $mail->Password   = 'mailsenderPassword';                                 // SMTP password
     $mail->SMTPSecure = 'ssl';                                   // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     // Recipients
-    $mail->setFrom('info@madalphadesigners.com', 'Mailer');
-    $mail->addAddress('ttaha8507@gmail.com');                    // Add a recipient
+    $mail->setFrom('mailsenderEmail', 'Mailer');
+    $mail->addAddress('mailreceiverEmail');                    // Add a recipient
     
     //Attachments
     $mail->addAttachment('img/attachment.png');    //Optional name
