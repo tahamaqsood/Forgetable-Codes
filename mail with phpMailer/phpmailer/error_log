@@ -1,0 +1,16 @@
+[07-Apr-2023 12:13:36 UTC] PHP Fatal error:  Array and string offset access syntax with curly braces is no longer supported in /home/madayoxp/public_html/phpmailer/index.php on line 60
+[07-Apr-2023 12:13:38 UTC] PHP Fatal error:  Array and string offset access syntax with curly braces is no longer supported in /home/madayoxp/public_html/phpmailer/index.php on line 60
+[07-Apr-2023 12:15:04 UTC] PHP Fatal error:  Array and string offset access syntax with curly braces is no longer supported in /home/madayoxp/public_html/phpmailer/index.php on line 60
+[07-Apr-2023 12:16:21 UTC] PHP Fatal error:  Array and string offset access syntax with curly braces is no longer supported in /home/madayoxp/public_html/phpmailer/index.php on line 60
+[07-Apr-2023 22:43:39 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/madayoxp/public_html/phpmailer/index.php on line 9
+[07-Apr-2023 22:43:39 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/madayoxp/public_html/phpmailer/index.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/madayoxp/public_html/phpmailer/index.php on line 9
+[07-Apr-2023 22:43:41 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/madayoxp/public_html/phpmailer/index.php on line 9
+[07-Apr-2023 22:43:41 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/madayoxp/public_html/phpmailer/index.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/madayoxp/public_html/phpmailer/index.php on line 9
+[07-Apr-2023 22:49:49 UTC] PHP Fatal error:  Cannot use PHPMailer\PHPMailer\PHPMailer as PHPMailer because the name is already in use in /home/madayoxp/public_html/phpmailer/index.php on line 5
+[07-Apr-2023 22:49:53 UTC] PHP Fatal error:  Cannot use PHPMailer\PHPMailer\PHPMailer as PHPMailer because the name is already in use in /home/madayoxp/public_html/phpmailer/index.php on line 5
