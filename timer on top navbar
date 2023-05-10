@@ -1,0 +1,53 @@
+
+    <!-- HTML -->
+    <span class="text-end">
+      <span id="days"></span>
+      <span id="hours"></span>
+      <span id="minutes"></span>
+      <span id="seconds"></span>
+    </span>  
+
+
+<!-- CSS -->
+<style>
+#timer {
+  padding: 10px;
+}
+
+#timer span {
+  margin-right: 10px;
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+// Set the countdown date (June 10, 2023)
+var countdownDate = new Date("May 25, 2023 00:00:00").getTime();
+
+// Update the countdown every 1 second
+var countdownTimer = setInterval(function() {
+  // Get the current date and time
+  var now = new Date().getTime();
+
+  // Calculate the remaining time
+  var distance = countdownDate - now;
+
+  // Calculate days, hours, minutes, and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the countdown
+  document.getElementById("days").innerHTML = days + "d ";
+  document.getElementById("hours").innerHTML = hours + "h ";
+  document.getElementById("minutes").innerHTML = minutes + "m ";
+  document.getElementById("seconds").innerHTML = seconds + "s ";
+
+  // If the countdown is finished, display a message
+  if (distance < 0) {
+    clearInterval(countdownTimer);
+    document.getElementById("timer").innerHTML = "Offer Ended";
+  }
+}, 1000);
+</script>
