@@ -1,0 +1,44 @@
+<?php
+// Include the database connection
+include("../db_connect.php");
+
+// IMAP configuration
+$hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
+$username = 'ttaha8507@gmail.com'; // Replace with your email
+$password = ''; // Replace with your email password
+
+// Try to connect to the mailbox
+$inbox = imap_open($hostname, $username, $password) or die('Cannot connect to Gmail: ' . imap_last_error());
+
+// Get the number of messages
+$emails = imap_search($inbox, 'UNSEEN');
+
+if ($emails) {
+    foreach ($emails as $email_number) {
+        $overview = imap_fetch_overview($inbox, $email_number, 0);
+        $message = imap_fetchbody($inbox, $email_number, 1);
+
+        // Process the email
+        $messageFrom = $overview[0]->from;
+        $messageText = $message;
+        $receiver_email = "ttaha8507@gmail.com";
+        $type = "reply";
+
+        // Insert the message into the database
+        $stmt = $conn->prepare("INSERT INTO mail_messages (sender, receiver, type, message) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $messageFrom, $receiver_email, $type, $messageText);
+
+        if ($stmt->execute()) {
+            // Call function to send the message (this should be your logic)
+            echo "Message sent!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    }
+}
+
+// Close the IMAP connection
+imap_close($inbox);
+$conn->close();
